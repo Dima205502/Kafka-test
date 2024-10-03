@@ -12,11 +12,11 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - "29092:29092"  # Измените порт для внешнего подключения
+      - "29092:29092" 
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29092  # Используйте порт 29092 для доступа снаружи
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092  # Измените внутренний порт на 29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29092 
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092  
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
